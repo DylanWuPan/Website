@@ -1,3 +1,3 @@
 # Dylan-Pan
 
-The official webiste for Dylan Pan. 
+The official webiste of Dylan Pan. 
