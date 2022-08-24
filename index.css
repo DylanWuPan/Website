@@ -1,0 +1,423 @@
+/* Style Sheet for Dylan Pan's Website */
+
+html, body, header, nav {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: Righteous;
+    src: url(Righteous-Regular.ttf);
+}
+
+#container {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#landing {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes nameMove {
+    0% {top: 0}
+    100% {top: 35vh}
+}
+
+.hidden {
+    opacity: 0;
+}
+
+
+#name.shown {
+    color: white;
+    font-family: Righteous;
+    font-size: 10vh;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    animation-name: fadeIn, nameMove;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    background: -webkit-linear-gradient(200deg, rgba(60,219,135,1) 0%, rgba(1,86,150,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#name.hidden {
+    color: white;
+    font-family: Righteous;
+    font-size: 10vh;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+#aboutSection {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutInfo1 {
+    border-radius: 5vw;
+    height: auto;
+    width: 60vw;
+    padding: 10vh;
+    margin: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0 0 2vh rgb(153,31,54);
+    background-color: rgb(153,31,54);
+}
+
+#aboutInfo2 {
+    border-radius: 5vw;
+    border-width: 0;
+    height: auto;
+    width: 60vw;
+    padding: 10vh;
+    margin: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0 0 2vh rgb(252,182,29);
+    background-color:rgb(252,182,29);
+}
+
+#aboutInfo3 {
+    border-radius: 5vw;
+    border-width: 0;
+    height: auto;
+    width: 60vw;
+    padding: 10vh;
+    margin: 10vh;
+    margin-bottom: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0 0 2vh rgb(60,219,135);
+    background-color: rgb(60,219,135)
+}
+
+#aboutIcon {
+    height: 15vh;
+    width: auto;
+    margin: 0;
+    padding: 0;
+} 
+
+#aboutText {
+    color: white;
+    font-family: Righteous;
+    font-size: 3vh;
+    padding: 0;
+    margin: 0;
+    margin-left: 5vw;
+    height: auto;
+    width: auto;
+}
+
+#contactSection {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactCard.shown {
+    width: 70vh;
+    height: 40vh;
+    padding: 2.5vh;
+    margin: 0;
+    border-width: 0.25vw;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    box-shadow: 0 0 1vw rgb(255, 255, 255);
+    background-color: black;
+}
+
+#contactCard.hidden {
+    width: 70vh;
+    height: 40vh;
+    margin: 0;
+    padding: 2.5vh;
+}
+
+#contactCardHeader.shown {
+    color: white;
+    font-family: Righteous;
+    font-size: 6vh;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    padding-top: 12vh;    
+    height: auto;
+    width: auto;
+    animation-name: fadeIn;
+    animation-delay: 0.25s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#contactCardHeader.hidden {
+    color: white;
+    font-family: Righteous;
+    font-size: 6vh;
+    padding: 0;
+    margin: 0;
+    padding-top: 12vh;
+    height: auto;
+    width: auto;
+}
+
+#contactCardContent {
+    height: 15vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#contactCardBasic {
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#contactBasicList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1vh;
+}
+
+#contactBasicListItem1.shown {
+    color: white;
+    font-family: Righteous;
+    padding: 0;
+    padding-top: 1.5vh;
+    margin: 0;
+    height: auto;
+    width: auto;
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    animation-name: fadeIn;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#contactBasicListItem2.shown {
+    color: white;
+    font-family: Righteous;
+    padding: 0;
+    padding-top: 1.5vh;
+    margin: 0;
+    height: auto;
+    width: auto;
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    animation-name: fadeIn;
+    animation-delay: 0.75s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#contactBasicIcon {
+    height: 2.5vh;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    padding-right: 1vw;
+}
+
+#contactBasicText {
+    color: white;
+    font-family: Righteous;
+    font-size: 2vh;
+    padding: 0;
+    margin: 0;
+}
+
+#contactCardSocial {
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: right;
+}
+
+#contactSocialList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1vh;
+}
+
+#contactSocialListItem1.shown {
+    color: white;
+    font-family: Righteous;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: auto;
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    animation-name: fadeIn;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+#contactSocialIcon {
+    height: 3.5vh;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    margin-top: 4vh;
+}
+
+#contactSocialIcon:hover {
+    opacity: 0.75;
+}
+
+#navbar {
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: flex-start;
+}
+
+#navBarItem1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 3vh;
+    padding-bottom: 0.5vh;
+    color: white;
+    font-family: Righteous;
+    font-size: 2.5vh;
+    animation-name: fadeIn;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    cursor: pointer;
+}
+
+#navBarItem1:hover {
+    opacity: 0.75;
+}
+
+#navBarItem2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 3vh;
+    padding-bottom: 0.5vh;
+    color: white;
+    font-family: Righteous;
+    font-size: 2.5vh;
+    animation-name: fadeIn;
+    animation-delay: 0.75s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    cursor: pointer;
+}
+
+#navBarItem2:hover {
+    opacity: 0.75;
+}
+
+#navBarItem3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 3vh;
+    margin-right: 7vh;
+    padding-bottom: 0.5vh;
+    color: white;
+    font-family: Righteous;
+    font-size: 2.5vh;
+    animation-name: fadeIn;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    cursor: pointer;
+}
+
+#navBarItem3:hover {
+    opacity: 0.75;
+}
