@@ -7,6 +7,10 @@ html, body, header, nav {
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+  }
+
 @font-face {
     font-family: Righteous;
     src: url(Righteous-Regular.ttf);
@@ -90,7 +94,7 @@ html, body, header, nav {
     height: auto;
     width: 60vw;
     padding: 10vh;
-    margin: 10vh;
+    margin: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -105,7 +109,7 @@ html, body, header, nav {
     height: auto;
     width: 60vw;
     padding: 10vh;
-    margin: 10vh;
+    margin: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -120,7 +124,7 @@ html, body, header, nav {
     height: auto;
     width: 60vw;
     padding: 10vh;
-    margin: 10vh;
+    margin: 20vh;
     margin-bottom: 30vh;
     display: flex;
     flex-direction: row;
@@ -406,7 +410,6 @@ html, body, header, nav {
     height: auto;
     padding: 0;
     margin: 3vh;
-    margin-right: 7vh;
     padding-bottom: 0.5vh;
     color: white;
     font-family: Righteous;
@@ -433,7 +436,7 @@ html, body, header, nav {
     margin-right: 7vh;
     padding-bottom: 0.5vh;
     color: white;
-    decoration: none;
+    text-decoration: none;
     font-family: Righteous;
     font-size: 3vh;
     animation-name: fadeIn;
