@@ -421,3 +421,27 @@ html, body, header, nav {
 #navBarItem3:hover {
     opacity: 0.75;
 }
+
+#navBarItem4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 3vh;
+    margin-right: 7vh;
+    padding-bottom: 0.5vh;
+    color: white;
+    font-family: Righteous;
+    font-size: 3vh;
+    animation-name: fadeIn;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    cursor: pointer;
+}
+
+#navBarItem4:hover {
+    opacity: 0.75;
+}
