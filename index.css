@@ -433,6 +433,7 @@ html, body, header, nav {
     margin-right: 7vh;
     padding-bottom: 0.5vh;
     color: white;
+    decoration: none;
     font-family: Righteous;
     font-size: 3vh;
     animation-name: fadeIn;
