@@ -1,0 +1,280 @@
+/* Dylan Pan's Website Styles */
+
+/* Base Styles */
+@font-face {
+  font-family: "Righteous";
+  src: url("../assets/Righteous-Regular.ttf");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* Container */
+#container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#navbar {
+  width: 100vw;
+  height: 5vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.navBarItem {
+  margin: 3vh;
+  padding-bottom: 0.5vh;
+  color: white;
+  font-family: "Righteous";
+  font-size: 3vh;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.navBarItem:hover {
+  opacity: 0.75;
+}
+
+/* Landing */
+#landing {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+#name {
+  color: white;
+  font-family: "Righteous";
+  font-size: 10vh;
+  position: absolute;
+}
+
+#name.shown {
+  animation: fadeIn 1.5s forwards, nameMove 1.5s forwards;
+  background: -webkit-linear-gradient(200deg, #3cdb87 0%, #015696 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* About Section */
+#aboutSection {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#aboutInfo1,
+#aboutInfo2,
+#aboutInfo3 {
+  width: 60vw;
+  padding: 8vh;
+  margin: 20vh 0;
+  border-radius: 5vw;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 2vh;
+}
+
+#aboutInfo1 {
+  background-color: rgb(153, 31, 54);
+  box-shadow: 0 0 2vh rgb(153, 31, 54);
+}
+
+#aboutInfo2 {
+  background-color: rgb(252, 182, 29);
+  box-shadow: 0 0 2vh rgb(252, 182, 29);
+}
+
+#aboutInfo3 {
+  background-color: rgb(60, 219, 135);
+  box-shadow: 0 0 2vh rgb(60, 219, 135);
+  margin-bottom: 30vh;
+}
+
+#aboutIcon {
+  height: 15vh;
+}
+
+#aboutText {
+  color: white;
+  font-family: "Righteous";
+  font-size: 3vh;
+  margin-left: 5vw;
+}
+
+/* Contact Section */
+#contactSection {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contactCard {
+  width: 70vh;
+  height: 40vh;
+  padding: 2.5vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#contactCard.shown {
+  border: 0.25vw solid white;
+  box-shadow: 0 0 1vw white;
+  background-color: black;
+  animation: fadeIn 1s forwards;
+}
+
+#contactCardLeft,
+#contactCardRight {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#contactCardHeader {
+  color: white;
+  font-family: "Righteous";
+  font-size: 6vh;
+  padding-top: 12vh;
+}
+
+#contactCardHeader.shown {
+  opacity: 0;
+  animation: fadeIn 1s 0.25s forwards;
+}
+
+/* Spacer */
+.spacer {
+  flex-grow: 1;
+}
+
+/* Contact Info */
+#contactInfoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactInfoListItem {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: "Righteous";
+  opacity: 0;
+}
+
+.contactInfoListItem.shown {
+  animation: fadeIn 1s forwards;
+}
+
+#contactInfoListItem1.shown {
+  animation-delay: 0.5s;
+}
+
+#contactInfoListItem2.shown {
+  animation-delay: 0.75s;
+}
+
+.contactInfoIcon {
+  height: 2.5vh;
+  padding-right: 1vw;
+}
+
+.contactInfoText {
+  font-size: 2vh;
+}
+
+/* Contact Social */
+#contactSocialList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contactSocialListItem {
+  padding-top: 1.5vh;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+
+.contactSocialListItem.shown {
+  animation: fadeIn 1s forwards;
+}
+
+#contactSocialListItem1.shown {
+  animation-delay: 0.5s;
+}
+
+#contactSocialListItem2.shown {
+  animation-delay: 0.75s;
+}
+
+#contactSocialListItem3.shown {
+  animation-delay: 1s;
+}
+
+.contactSocialIcon {
+  height: 3.5vh;
+  margin-top: 4vh;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contactSocialIcon:hover {
+  opacity: 0.9;
+  transform: scale(1.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes nameMove {
+  from {
+    top: 0;
+  }
+  to {
+    top: 35vh;
+  }
+}
