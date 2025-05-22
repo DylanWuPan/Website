@@ -1,87 +1,72 @@
-//Javascript Index for Dylan Pan's Website
+// Javascript Index for Dylan Pan's Website
 
-$(document).ready(function() {
-    $("#name").each(function() {
-        show(this);
-    })
+$(document).ready(function () {
+  const $window = $(window);
+  const windowHeight = $window.height();
 
-    $(window).scroll( function(){
+  // Initial reveal of name
+  $("#name").each(function () {
+    show(this);
+  });
 
-        $(".hidden").each(function(){
-    
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-    
-            /* If the object is completely visible in the window, fade it it */
-            if( bottom_of_window > bottom_of_object ){
-                show(this);
-            }    
-        });
-        
-        $("#aboutInfo1").each(function() {
+  // Scroll behavior
+  $window.on("scroll", function () {
+    const scrollTop = $window.scrollTop();
 
-            var windowWidth = $(window).width();
-            var startLine = $(this).position().top + $(this).outerHeight() - (1 * $(window).height());
-            var scrollPos = $(window).scrollTop() - startLine;
-            var newMargin = windowWidth - (2.1 * scrollPos);
+    // Fade in hidden elements
+    $(".hidden").each(function () {
+      const $elem = $(this);
+      const bottom_of_object = $elem.position().top + $elem.outerHeight();
+      const bottom_of_window = scrollTop + windowHeight;
 
-            $(this).css("margin-right", newMargin);
-            $(this).show();
-        });
-
-        $("#aboutInfo2").each(function() {
-
-            var windowWidth = $(window).width();
-            var startLine = $(this).position().top + $(this).outerHeight() - (1 * $(window).height());
-            var scrollPos = $(window).scrollTop() - startLine;
-            var newMargin = windowWidth - (2.1 * scrollPos);
-
-            $(this).css("margin-left", newMargin);
-            $(this).show();
-        });
-
-        $("#aboutInfo3").each(function() {
-
-            var windowWidth = $(window).width();
-            var startLine = $(this).position().top + $(this).outerHeight() - (1 * $(window).height());
-            var scrollPos = $(window).scrollTop() - startLine;
-            var newMargin = windowWidth - (2.1 * scrollPos);
-
-            $(this).css("margin-right", newMargin);
-            $(this).show();
-        });
-    
-    }); 
-
-    $("#navBarItem1").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#landing").offset().top
-        }, 1000);
+      if (bottom_of_window > bottom_of_object) {
+        show($elem);
+      }
     });
 
-    $("#navBarItem2").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#aboutSection").offset().top
-        }, 1000);
-    });
+    // Animate about section boxes
+    ["#aboutInfo1", "#aboutInfo2", "#aboutInfo3"].forEach(function (id) {
+      const isLeft = id === "#aboutInfo2";
 
-    $("#navBarItem3").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#contactSection").offset().top
-        }, 1000);
-    });
+      $(id).each(function () {
+        const $elem = $(this);
+        const startLine =
+          $elem.position().top + $elem.outerHeight() - windowHeight;
+        const scrollPos = scrollTop - startLine;
+        const newMargin = $window.width() - 4 * scrollPos;
 
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        var scrollpos = localStorage.getItem('scrollpos');
-        if (scrollpos) window.scrollTo(0, scrollpos);
+        $elem.css(isLeft ? "margin-left" : "margin-right", newMargin);
+        $elem.show();
+      });
     });
+  });
 
-    window.onbeforeunload = function(e) {
-        localStorage.setItem('scrollpos', window.scrollY);
-    };
+  // Navigation scroll
+  $("#navBarItem1").click(() => scrollToSection("#landing"));
+  $("#navBarItem2").click(() => scrollToSection("#aboutSection"));
+  $("#navBarItem3").click(() => scrollToSection("#contactSection"));
+
+  // Restore scroll position
+  const scrollPos = localStorage.getItem("scrollpos");
+  if (scrollPos) window.scrollTo(0, scrollPos);
+
+  // Save scroll position on unload
+  window.onbeforeunload = () => {
+    localStorage.setItem("scrollpos", window.scrollY);
+  };
 });
 
-function show (elem){
-    $(elem).removeClass("hidden");
-    $(elem).addClass("shown");
+// Helper: Show element by removing "hidden", adding "shown"
+function show(elem) {
+  $(elem).removeClass("hidden").addClass("shown");
+}
+
+// Helper: Smooth scroll to section
+function scrollToSection(selector) {
+  $("html, body").animate(
+    {
+      scrollTop: $(selector).offset().top - 20, // minor offset for padding
+    },
+    1000
+  );
 }

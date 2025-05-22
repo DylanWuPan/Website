@@ -42,10 +42,15 @@ body::-webkit-scrollbar {
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
+  padding-right: 10vw;
+}
+
+#navbar > *:last-child {
+  margin-right: 3vw;
 }
 
 .navBarItem {
-  margin: 3vh;
+  margin: 3vh 1.5vw;
   padding-bottom: 0.5vh;
   color: white;
   font-family: "Righteous";
