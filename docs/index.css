@@ -332,3 +332,10 @@ body::-webkit-scrollbar {
     flex-direction: row;
   }
 }
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #333;
+  font-family: "Righteous";
+}
