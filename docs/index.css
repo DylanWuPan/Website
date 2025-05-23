@@ -74,13 +74,16 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   background-color: black;
+  position: relative;
 }
 
 #name {
-  color: white;
   font-family: "Righteous";
   font-size: 10vh;
   position: absolute;
+  margin-left: 5vw;
+  position: absolute;
+  transform: translate(0, -40%);
 }
 
 #name.shown {
@@ -99,9 +102,7 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 
-#aboutInfo1,
-#aboutInfo2,
-#aboutInfo3 {
+.aboutInfoCard {
   width: 60vw;
   padding: 8vh;
   margin: 20vh 0;
@@ -127,7 +128,7 @@ body::-webkit-scrollbar {
   margin-bottom: 30vh;
 }
 
-#aboutIcon {
+.aboutIcon {
   height: 15vh;
 }
 
@@ -190,6 +191,10 @@ body::-webkit-scrollbar {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin-bottom: 4px;
 }
 
 .contactInfoListItem {
@@ -219,6 +224,8 @@ body::-webkit-scrollbar {
 
 .contactInfoText {
   font-size: 2vh;
+  padding: 0;
+  margin: 0;
 }
 
 /* Contact Social */
@@ -281,5 +288,47 @@ body::-webkit-scrollbar {
   }
   to {
     top: 35vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #navbar {
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1vh;
+    gap: 2vw;
+    backdrop-filter: blur(2px);
+  }
+
+  .aboutInfoCard {
+    width: 90vw;
+    box-sizing: border-box;
+    padding: 4vw;
+    border-radius: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 2vh;
+  }
+
+  .aboutIcon {
+    height: 10vh;
+    padding-top: 2vh;
+  }
+
+  #contactCard {
+    max-width: 95vw;
+    box-sizing: border-box;
+    height: 32vh;
+    padding: 2.5vh;
+    display: flex;
+    flex-direction: row;
   }
 }

@@ -33,7 +33,7 @@ $(document).ready(function () {
         const startLine =
           $elem.position().top + $elem.outerHeight() - windowHeight;
         const scrollPos = scrollTop - startLine;
-        const newMargin = $window.width() - 4 * scrollPos;
+        const newMargin = $window.width() - 0.002 * $window.width() * scrollPos;
 
         $elem.css(isLeft ? "margin-left" : "margin-right", newMargin);
         $elem.show();
